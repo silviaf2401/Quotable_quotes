@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+  </head>
+  <body>
+  <a href='/logoff'> Log off</a>
+  <a href='/quotes'> Dashboard</a>
+   <h1> Posts by {{posts[0]['name']}}</h1>
+   <h2> Count: {{posts[0]['num_quotes']}} </h2>
+ 
+  <table>
+    		<tr> 
+    		</tr>
+    		{%for element in posts%}
+    		<tr> 
+    			<td> Author: {{element['quoteauthor']}}  </td>
+          <td> Quote: {{element['content']}}</td>
+    		</tr>
+            {%endfor%}
+ 
+    	</table>
+
+  
+  </body>
+</html>

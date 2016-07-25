@@ -1,3 +1,67 @@
 * {
-  font-family: monaco;
+  font-family: Arial;
+}
+#fn{
+
+	margin-left: 58px;
+}
+
+#ln{
+
+	margin-left: 59px;
+}
+
+#em{
+
+	margin-left: 91px;
+}
+
+#pw{
+
+	margin-left: 66px;
+}
+
+#cpw{
+
+	margin-left: 7px;
+}
+
+#reg {
+	margin-top: 25px;
+	margin-left: 60px;
+	color: white;
+	background-color: green;
+	width: 150px;
+	height: 35px;
+	border: 1px solid green;
+	border-radius: 8px;
+	font-size: 16px;
+}
+
+#login {
+	margin-top: 25px;
+	margin-left: 60px;
+	color: white;
+	background-color: orange;
+	width: 150px;
+	height: 35px;
+	border: 1px solid orange;
+	border-radius: 8px;
+	font-size: 16px;
+}
+
+#lem {
+	margin-left: 25px;
+}
+
+#orange {
+	color: orange;
+}
+
+#green {
+	color: green;
+}
+
+#success {
+	color: green;
 }

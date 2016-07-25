@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+  </head>
+  <body>
+     {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+          {% endif %}
+          {% endwith %}
+   <h1> Welcome, {{session['name']}}! </h1>
+   <a href='/logoff'> Log off</a>
+   <h2> Contribute a quote:</h2>
+   <form action='/addquotablequote' method="POST">
+   	<label> Quoted by:</label> <input type ='text' name='quoteauthor'>
+   	<label> Message:</label> <input type ='text' name='content'>
+   	<div><input type="submit" value ="Submit"></div>
+   </form>
+  <table>
+    		<tr> 
+    			<td> Quotable quotes </td>
+    		</tr>
+    		{%for element in quote%}
+    		<tr> 
+    			<td> Author: {{element['quoteauthor']}}  </td>
+          <td> Quote: {{element['content']}}</td>
+          <td> Posted by <a href='/display/{{element['whoadded']}}'>{{element['name']}}</a></td>
+    			<form action='/addfavstatus/{{element['id']}}' method="POST">
+    			<td> <input type =submit name='addtofavs' value='ADD TO MY LIST'></td>
+    		  </form>
+    		</tr>
+            {%endfor%}
+ 
+    	</table>
+
+  <table>
+        <tr> 
+          <td> Favorite quotes </td>
+        </tr>
+        {%for element in favquote%}
+        <tr> 
+          <td> Author: {{element['quoteauthor']}} </td>
+          <td> Quote: {{element['content']}}</td>
+          <td> Posted by <a href='/display/{{element['whoadded']}}'>{{element['name']}}</a></td>
+          <form action='/removefavstatus/{{element['id']}}' method="POST">
+          <td> <input type =submit name='addtofavs' value='REMOVE FROM MY LIST'></td>
+          </form>
+        </tr>
+            {%endfor%}
+ 
+      </table>       	 
+  </body>
+</html>
